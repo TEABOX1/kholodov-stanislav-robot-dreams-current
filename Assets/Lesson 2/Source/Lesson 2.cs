@@ -20,7 +20,7 @@ public class Lesson2 : MonoBehaviour
     [ContextMenu("Force OG")]
     public void ForceGC()
     {
-        GC.Collect(GC.MaxGeneration);
+        GC.Collect();
     }
 
     [ContextMenu( "Create List" )]
