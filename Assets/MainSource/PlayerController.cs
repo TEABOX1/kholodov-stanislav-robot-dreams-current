@@ -9,6 +9,9 @@ namespace Assets.Lesson_7.Source
     {
         [SerializeField] private CharacterController _characterController;
         [SerializeField] private float _speed;
+        [SerializeField] private Transform _playerTransform;
+        [SerializeField] private Vector2 _regularHeightOffset;
+        [SerializeField] private Vector2 _crouchedHeightOffset;
 
         private Transform _transform;
 
@@ -78,17 +81,19 @@ namespace Assets.Lesson_7.Source
             Vector3 size = _transform.localScale;
             if (crouchInput)
             {
-                _characterController.height = _defaultCharacterHeight/2;
+                _characterController.height = _crouchedHeightOffset.x;
+                _characterController.center = new Vector3( 0f, _crouchedHeightOffset.y, 0f );
                 size.y = _defaultCharacterScale.y / 2;
                 _speed = 5;
             }
             else
             {
-                _characterController.height = _defaultCharacterHeight;
+                _characterController.height = _regularHeightOffset.x;
+                _characterController.center = new Vector3(0f, _regularHeightOffset.y, 0f);
                 size.y = _defaultCharacterScale.y;
                 _speed = 15;
             }
-            _transform.localScale = size;
+            _playerTransform.localScale = size;
         }
     }
 }
