@@ -746,7 +746,7 @@ PrefabInstance:
     - target: {fileID: 8446781592154944087, guid: 3855fb65295e2ed489e739ea0db26672,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.8961
+      value: -6.7019005
       objectReference: {fileID: 0}
     - target: {fileID: 8446781592154944087, guid: 3855fb65295e2ed489e739ea0db26672,
         type: 3}
@@ -1270,7 +1270,7 @@ MeshRenderer:
   - {fileID: 2100000, guid: c1d679f5196e43d4794fb51568bebbca, type: 2}
   - {fileID: 2100000, guid: c1d679f5196e43d4794fb51568bebbca, type: 2}
   - {fileID: 2100000, guid: 5d67e453e9bc38849896887834d16f89, type: 2}
-  - {fileID: 2100000, guid: c1d679f5196e43d4794fb51568bebbca, type: 2}
+  - {fileID: 2100000, guid: ff7f74d4a15510a4d966f1cd0998418d, type: 2}
   - {fileID: 2100000, guid: c1d679f5196e43d4794fb51568bebbca, type: 2}
   - {fileID: 2100000, guid: c1d679f5196e43d4794fb51568bebbca, type: 2}
   - {fileID: 2100000, guid: 5d67e453e9bc38849896887834d16f89, type: 2}
