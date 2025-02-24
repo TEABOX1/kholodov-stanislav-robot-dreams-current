@@ -3,7 +3,7 @@ using UnityEngine.InputSystem.XInput;
 using UnityEngine.InputSystem.XR;
 using static UnityEditor.FilePathAttribute;
 
-namespace Assets.Lesson_7.Source
+namespace Assets.MainSource
 {
     public class CameraController : MonoBehaviour
     {
@@ -12,47 +12,46 @@ namespace Assets.Lesson_7.Source
         [SerializeField] private float _sensitivity;
 
 
-        private float _pitch = 10f;
+        private float _pitch = 0f;
         private float _yaw = 0f;
 
         private Vector2 _lookInput;
-        private Transform _transform;
 
         private void Start()
         {
             InputControl.OnLookInput += LookHandler;
-            _transform = transform;
         }
 
         private void LateUpdate()
         {
-            _pitch -= _lookInput.y * _sensitivity * Time.deltaTime;
-            _yaw += _lookInput.x * _sensitivity * Time.deltaTime;
+            //_pitch -= _lookInput.y * _sensitivity * Time.deltaTime;
+            //_yaw += _lookInput.x * _sensitivity * Time.deltaTime;
 
-            if( _pitch < -25f)
-            {
-                _pitch = -25f;
-            }
-            else if( _pitch > 25f )
-            {
-                _pitch = 25f;
-            }
-            if (_pitch > -25f && _pitch < 25f)
-                _pitchAnchor.localRotation = Quaternion.Euler(_pitch, 0f, 0f);
+            _pitchAnchor.localRotation = Quaternion.Euler(0f, _pitch, 0f);
 
-            _yawAnchor.rotation = Quaternion.Euler(0f, _yaw, 0f);
-            _transform.rotation = _yawAnchor.rotation;
+            if (_yaw < -20f)
+            {
+                _yaw = -20f;
+            }
+            else if (_yaw > 25f)
+            {
+                _yaw = 25f;
+            }
+            if (_yaw > -25f && _yaw < 25f)
+                _yawAnchor.localRotation = Quaternion.Euler(_yaw, 0f, 0f);
         }
 
         private void LookHandler(Vector2 lookInput)
         {
-            _lookInput = lookInput;
+            lookInput *= _sensitivity;
+            _pitch += lookInput.x;
+            _yaw += -lookInput.y;
         }
 
         public void SetYawAnchor(Transform yawAnchor)
         {
-            _yawAnchor.rotation = yawAnchor.rotation = Quaternion.Euler(0f, _yaw, 0f);
-            _yawAnchor = yawAnchor;
+            //_yawAnchor.rotation = yawAnchor.rotation = Quaternion.Euler(0f, _yaw, 0f);
+            //_yawAnchor = yawAnchor;
         }
     }
 }

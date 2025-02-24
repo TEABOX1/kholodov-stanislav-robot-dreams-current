@@ -24,6 +24,24 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "Primary",
+                    "type": "Button",
+                    "id": "c277ac26-f843-45e3-8a1e-f894fd19e4d4",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Secondary",
+                    "type": "Button",
+                    "id": "702b13ff-6725-479d-88f9-5c2029b3e46a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Jump",
                     "type": "Button",
                     "id": "15631d80-9559-4829-90ef-c587491ad743",
@@ -148,6 +166,56 @@
                     "processors": "",
                     "groups": "",
                     "action": "Crouch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a6f54566-c4bc-4097-af7a-dd9ffe1f2ea8",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Primary",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0c4188b1-7544-4c81-b5a6-a8e54732813d",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Secondary",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "UI",
+            "id": "e71f4c4e-c469-4fd6-9f6a-035eb2f0b8ba",
+            "actions": [
+                {
+                    "name": "Escape",
+                    "type": "Button",
+                    "id": "c0117958-aa3e-492e-924c-086ab7fd7230",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "192d4cc0-6761-43bd-ad8b-bb23cd1bf149",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Escape",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

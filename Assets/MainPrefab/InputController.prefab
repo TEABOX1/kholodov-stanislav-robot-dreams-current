@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6689570511753056642}
-  - component: {fileID: 5060316629126685579}
+  - component: {fileID: 3650667331389136758}
   m_Layer: 0
   m_Name: InputController
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5060316629126685579
+--- !u!114 &3650667331389136758
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -47,8 +47,12 @@ MonoBehaviour:
   m_inputActionAsset: {fileID: -944628639613478452, guid: 4d84948b97c56884fae3aa0d5dcaf0b0,
     type: 3}
   m_mapName: DefaultMove
+  m_UIMapName: UI
   m_moveName: Movement
   m_lookAroundName: LookAround
+  m_primaryFireName: Primary
+  m_secondaryFireName: Secondary
+  m_escapeName: Escape
   m_jumpName: Jump
   m_runName: Run
   m_crouchName: Crouch

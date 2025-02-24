@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem.XInput;
 using UnityEngine.InputSystem.XR;
 
-namespace Assets.Lesson_7.Source
+namespace Assets.MainSource
 {
     public class PlayerController : MonoBehaviour
     {

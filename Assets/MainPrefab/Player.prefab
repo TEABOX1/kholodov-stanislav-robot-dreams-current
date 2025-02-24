@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4040264789170168957}
   m_Layer: 0
-  m_Name: CamerYawAnchor
+  m_Name: CamerPitchAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 2974265412720588833}
   serializedVersion: 2
   m_LocalRotation: {x: -0.052195016, y: -0, z: -0, w: 0.99863696}
-  m_LocalPosition: {x: 0, y: 0.497, z: 0}
+  m_LocalPosition: {x: 1.27, y: -1.393, z: 1.255}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -160,6 +160,7 @@ GameObject:
   - component: {fileID: 8905880918615150225}
   - component: {fileID: 3106738777398135770}
   - component: {fileID: 1135068549493017979}
+  - component: {fileID: 6965159254867467824}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -213,9 +214,9 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.01
-  far clip plane: 1000.76
-  field of view: 84.1
+  near clip plane: 0.3
+  far clip plane: 250
+  field of view: 60
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -285,6 +286,21 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &6965159254867467824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6913555326324162720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13709160d4148dc47bbea51c26e56c13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pitchAnchor: {fileID: 7976194103929464553}
+  _yawAnchor: {fileID: 4158431197568949795}
+  _sensitivity: 0.1
 --- !u!1 &7471202294159911658
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,7 +312,7 @@ GameObject:
   - component: {fileID: 7976194103929464553}
   - component: {fileID: 328607306882308396}
   - component: {fileID: 7417189768978599551}
-  - component: {fileID: 8954624129291684270}
+  - component: {fileID: 1846354221145231822}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -364,7 +380,7 @@ MonoBehaviour:
   _playerTransform: {fileID: 4033698207906183767}
   _regularHeightOffset: {x: 1.8, y: 0}
   _crouchedHeightOffset: {x: 1, y: -0.4}
---- !u!114 &8954624129291684270
+--- !u!114 &1846354221145231822
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -373,12 +389,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 7471202294159911658}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13709160d4148dc47bbea51c26e56c13, type: 3}
+  m_Script: {fileID: 11500000, guid: bdbf02d4ad1e26747a9594213fd70ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pitchAnchor: {fileID: 4158431197568949795}
-  _yawAnchor: {fileID: 4040264789170168957}
-  _sensitivity: 50
+  m_explisionController: {fileID: 2696619786633610969, guid: fb75b94b752c05d44b6448080b2fdb8f,
+    type: 3}
+  m_cameraTransform: {fileID: 294784576435683685}
+  _rayDistance: 50
+  _rayMask:
+    serializedVersion: 2
+    m_Bits: 51
+  _explsionMask:
+    serializedVersion: 2
+    m_Bits: 51
+  m_explosionRadius: 1.5
+  m_explosionForce: 150000
+  m_verticalOffset: 0
 --- !u!1 &7835302867200660767
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,7 +520,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4158431197568949795}
   m_Layer: 0
-  m_Name: CameraPitchAnchor
+  m_Name: CameraYawAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
