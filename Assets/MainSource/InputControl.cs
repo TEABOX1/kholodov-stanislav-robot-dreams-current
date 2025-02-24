@@ -104,7 +104,7 @@ namespace Assets.MainSource
             m_secondaryFireAction.canceled -= SecondaryFireCanceledHandler;
 
             m_jumpAction.performed -= JumpPerformedHandler;
-            //m_jumpAction.canceled -= JumpCanceledHandler;
+            m_jumpAction.canceled -= JumpCanceledHandler;
 
             m_runAction.performed -= RunPerformedHandler;
             m_runAction.canceled -= RunCanceledHandler;
