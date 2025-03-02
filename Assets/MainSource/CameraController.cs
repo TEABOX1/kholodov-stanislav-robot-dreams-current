@@ -38,7 +38,10 @@ namespace Assets.MainSource
                 _yaw = 25f;
             }
             if (_yaw > -25f && _yaw < 25f)
-                _yawAnchor.localRotation = Quaternion.Euler(_yaw, 0f, 0f);
+                _yawAnchor.rotation = Quaternion.Euler(0f, 0f, _yaw);
+
+            Debug.Log("_yaw" +  _yaw);
+            Debug.Log("Euler" + Quaternion.Euler(_yaw, 0f, 0f));
         }
 
         private void LookHandler(Vector2 lookInput)
@@ -46,12 +49,6 @@ namespace Assets.MainSource
             lookInput *= _sensitivity;
             _pitch += lookInput.x;
             _yaw += -lookInput.y;
-        }
-
-        public void SetYawAnchor(Transform yawAnchor)
-        {
-            //_yawAnchor.rotation = yawAnchor.rotation = Quaternion.Euler(0f, _yaw, 0f);
-            //_yawAnchor = yawAnchor;
         }
     }
 }
