@@ -56,3 +56,4 @@ MonoBehaviour:
   m_jumpName: Jump
   m_runName: Run
   m_crouchName: Crouch
+  m_granateName: Grante

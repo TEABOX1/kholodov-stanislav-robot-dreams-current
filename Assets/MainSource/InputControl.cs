@@ -14,6 +14,7 @@ namespace Assets.MainSource
         public static event Action<bool> OnJumpInput;
         public static event Action<bool> OnRunInput;
         public static event Action<bool> OnCrouchInput;
+        public static event Action OnGranateInput;
 
         [SerializeField] private InputActionAsset m_inputActionAsset;
         [SerializeField] private string m_mapName;
@@ -26,6 +27,7 @@ namespace Assets.MainSource
         [SerializeField] private string m_jumpName;
         [SerializeField] private string m_runName;
         [SerializeField] private string m_crouchName;
+        [SerializeField] private string m_granateName;
 
         private InputAction m_moveAction;
         private InputAction m_lookAroundAction;
@@ -35,6 +37,7 @@ namespace Assets.MainSource
         private InputAction m_jumpAction;
         private InputAction m_runAction;
         private InputAction m_crouchAction;
+        private InputAction m_granateAction;
 
         private InputActionMap m_actionMap;
         private InputActionMap m_gameplayUIActionMap;
@@ -57,6 +60,7 @@ namespace Assets.MainSource
             m_runAction = m_actionMap[m_runName];
             m_crouchAction = m_actionMap[m_crouchName];
             m_escapeAction = m_gameplayUIActionMap[m_escapeName];
+            m_granateAction = m_actionMap[m_granateName];
 
             m_moveAction.performed += MovePerformedHandler;
             m_moveAction.canceled += MoveCanceledHandler;
@@ -68,6 +72,8 @@ namespace Assets.MainSource
 
             m_secondaryFireAction.performed += SecondaryFirePerformedHandler;
             m_secondaryFireAction.canceled += SecondaryFireCanceledHandler;
+
+            m_granateAction.performed += GranatePerfomedHandler;
 
             m_jumpAction.performed += JumpPerformedHandler;
             m_jumpAction.canceled += JumpCanceledHandler;
@@ -114,6 +120,8 @@ namespace Assets.MainSource
 
             m_escapeAction.performed -= EscapePerformedHandler;
 
+            m_granateAction.performed -= GranatePerfomedHandler;
+
             OnMoveInput = null;
             OnLookInput = null;
             OnPrimaryInput = null;
@@ -122,6 +130,7 @@ namespace Assets.MainSource
             OnJumpInput = null;
             OnRunInput = null;
             OnCrouchInput = null;
+            OnGranateInput = null;
         }
 
         private void MovePerformedHandler(InputAction.CallbackContext context)
@@ -154,6 +163,10 @@ namespace Assets.MainSource
             OnSecondaryInput?.Invoke(false);
         }
 
+        private void GranatePerfomedHandler(InputAction.CallbackContext context)
+        {
+            OnGranateInput?.Invoke();
+        }
         private void JumpPerformedHandler(InputAction.CallbackContext context)
         {
             OnJumpInput?.Invoke(true);
