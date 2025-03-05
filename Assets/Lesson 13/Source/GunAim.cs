@@ -10,6 +10,7 @@ namespace Lesson13
     {
         [SerializeField] private Transform _gunTransform;
         [SerializeField] private Transform _cameraTransform;
+        [SerializeField] private Transform m_muzzleTransform;
         [SerializeField] private float m_rayDistance;
         [SerializeField] private LayerMask m_rayMask;
         [SerializeField] private CinemachineMixingCamera m_mixingCamera;
@@ -35,10 +36,10 @@ namespace Lesson13
         private void FixedUpdate()
         {
             Ray ray = new Ray(_cameraTransform.position, _cameraTransform.forward);
-            m_hitPoint = _cameraTransform.position + _cameraTransform.forward * m_rayDistance;
+            Vector3 hitPoint = _cameraTransform.position + _cameraTransform.forward * m_rayDistance;
             if (Physics.Raycast(ray, out RaycastHit hitInfo, m_rayDistance, m_rayMask))
                 m_hitPoint = hitInfo.point;
-            _gunTransform.LookAt(m_hitPoint);
+            _gunTransform.LookAt(hitPoint);
         }
 
         private void Update()
