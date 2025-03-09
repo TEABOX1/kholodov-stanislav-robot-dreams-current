@@ -10,7 +10,6 @@ namespace Lesson13
     {
         [SerializeField] private Transform _gunTransform;
         [SerializeField] private Transform _cameraTransform;
-        [SerializeField] private Transform m_muzzleTransform;
         [SerializeField] private float m_rayDistance;
         [SerializeField] private LayerMask m_rayMask;
         [SerializeField] private CinemachineMixingCamera m_mixingCamera;

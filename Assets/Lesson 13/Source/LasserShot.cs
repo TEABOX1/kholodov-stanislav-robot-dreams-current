@@ -13,7 +13,6 @@ namespace Lesson13
 
         [SerializeField] protected GunAim m_aimer;
         [SerializeField] protected LasserAspect m_shotPrefab;
-        [SerializeField] private Transform _cameraTransform;
         [SerializeField] protected Transform m_muzzleTransform;
         [SerializeField] protected float m_decaySpeed;
         [SerializeField] protected Vector3 m_shotScale;
@@ -43,8 +42,6 @@ namespace Lesson13
         protected virtual void PrimaryInputHandler()
         {
             Vector3 muzzlePosition = m_muzzleTransform.position;
-            muzzlePosition.y -= 0.4f;
-            muzzlePosition.x -= 0.1f;
             Vector3 muzzleForward = m_muzzleTransform.forward;
             Ray ray = new Ray(muzzlePosition, muzzleForward);
             Vector3 hitPoint = muzzlePosition + muzzleForward * m_range;
