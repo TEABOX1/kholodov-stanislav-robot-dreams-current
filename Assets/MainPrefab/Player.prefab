@@ -950,9 +950,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 335cfa521390b514fa06d8e82b4f25a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gunTransform: {fileID: 7171248349695015684}
+  _gunTransform: {fileID: 5135510156887416991}
   _cameraTransform: {fileID: 294784576435683685}
-  m_muzzleTransform: {fileID: 6969212446532840276}
   m_rayDistance: 50
   m_rayMask:
     serializedVersion: 2
@@ -1002,12 +1001,11 @@ MonoBehaviour:
   m_aimer: {fileID: 8282908805964908354}
   m_shotPrefab: {fileID: 3973992011416855734, guid: 178135304d7ac6e46870edf6560e6148,
     type: 3}
-  _cameraTransform: {fileID: 294784576435683685}
   m_muzzleTransform: {fileID: 6969212446532840276}
   m_decaySpeed: 50
   m_shotScale: {x: 0.5, y: 0.5, z: 0.5}
   m_shotRadius: 0.02
-  m_shotVisualDiameter: 0.02
+  m_shotVisualDiameter: 0.08
   m_tilingName: _BaseMap_ST
   m_range: 50
   m_layerMask:

@@ -1,7 +1,9 @@
 using Assets.MainSource;
+using Lesson_14;
 using Lesson13;
 using System;
 using System.Collections;
+using System.Net.Sockets;
 using UnityEngine;
 
 namespace Lesson13
@@ -22,11 +24,17 @@ namespace Lesson13
         [SerializeField] protected float m_range;
         [SerializeField] protected LayerMask m_layerMask;
 
+        [SerializeField] protected EffectSystem m_effectsSystem;
+        [SerializeField] protected BloodEffect m_bloodEffect;
+        [SerializeField] protected StoneEffect m_stoneEffect;
+        [SerializeField] protected ParticleSystem m_muzzleShot;
+
         protected int _tilingId;
 
         protected virtual void Start()
         {
             _tilingId = Shader.PropertyToID(m_tilingName);
+            OnHit += GunHitHandler;
         }
 
         protected void OnEnable()
@@ -38,9 +46,11 @@ namespace Lesson13
         {
             InputControl.OnPrimaryInput -= PrimaryInputHandler;
         }
-
+        
         protected virtual void PrimaryInputHandler()
         {
+            m_muzzleShot.Play();
+
             Vector3 muzzlePosition = m_muzzleTransform.position;
             Vector3 muzzleForward = m_muzzleTransform.forward;
             Ray ray = new Ray(muzzlePosition, muzzleForward);
@@ -83,6 +93,42 @@ namespace Lesson13
             tiling.y = shot.distance * 0.5f / m_shotVisualDiameter;
             shot.outerPropertyBlock.SetVector(_tilingId, tiling);
             shot.Outer.SetPropertyBlock(shot.outerPropertyBlock);
+        }
+
+        private void GunHitHandler(Collider collider)
+        {
+            bool hasEffects = m_effectsSystem.GetEffects(collider, out HitEffectChooser effect);
+            if (!hasEffects)
+                return;
+            Quaternion hitRotation = new Quaternion();
+            Vector3 hitPoint = GetHitPosition(out hitRotation);
+            ParticleSystem effectInstance = null;
+            switch (effect.GetEffectNumber())
+            {
+                case HitEffectChooser.HitEffect.HE_Stone:
+                    effectInstance = Instantiate(m_stoneEffect.GetParticleSystem(), hitPoint, hitRotation);
+                    break;
+                case HitEffectChooser.HitEffect.HE_Blood:
+                    effectInstance = Instantiate(m_bloodEffect.GetParticleSystem(), hitPoint, hitRotation);
+                    break;
+            }
+        }
+
+        private Vector3 GetHitPosition(out Quaternion hitRotation)
+        {
+            Vector3 muzzlePosition = m_muzzleTransform.position;
+            Vector3 muzzleForward = m_muzzleTransform.forward;
+            Ray ray = new Ray(muzzlePosition, muzzleForward);
+            Vector3 hitPoint = muzzlePosition + muzzleForward * m_range;
+            hitRotation = new Quaternion();
+            if (Physics.SphereCast(ray, m_shotRadius, out RaycastHit hitInfo, m_range, m_layerMask))
+            {
+                Vector3 directVector = hitInfo.point - m_muzzleTransform.position;
+                Vector3 rayVector = Vector3.Project(directVector, ray.direction);
+                hitPoint = muzzlePosition + rayVector;
+                hitRotation = Quaternion.LookRotation(hitInfo.normal);
+            }
+            return hitPoint;
         }
     }
 }

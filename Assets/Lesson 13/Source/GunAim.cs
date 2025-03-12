@@ -35,10 +35,10 @@ namespace Lesson13
         private void FixedUpdate()
         {
             Ray ray = new Ray(_cameraTransform.position, _cameraTransform.forward);
-            Vector3 hitPoint = _cameraTransform.position + _cameraTransform.forward * m_rayDistance;
+            m_hitPoint = _cameraTransform.position + _cameraTransform.forward * m_rayDistance;
             if (Physics.Raycast(ray, out RaycastHit hitInfo, m_rayDistance, m_rayMask))
                 m_hitPoint = hitInfo.point;
-            _gunTransform.LookAt(hitPoint);
+            _gunTransform.LookAt(m_hitPoint);
         }
 
         private void Update()
