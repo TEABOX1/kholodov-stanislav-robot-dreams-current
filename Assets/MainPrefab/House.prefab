@@ -51,6 +51,7 @@ GameObject:
   - component: {fileID: 3603530067895792379}
   - component: {fileID: 3528583064495066592}
   - component: {fileID: 4030218987365471036}
+  - component: {fileID: 6578639561189543328}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -504,7 +505,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2806
+  m_VersionIndex: 2812
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -611,6 +612,20 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &6578639561189543328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694585245190391066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fe04817aeef17746b4f12c1904677f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _characterController: {fileID: 4030218987365471036}
+  m_hitEffect: 1
 --- !u!1 &826611987062695534
 GameObject:
   m_ObjectHideFlags: 0
@@ -623,6 +638,7 @@ GameObject:
   - component: {fileID: 1244308965977143545}
   - component: {fileID: 4649652046608520512}
   - component: {fileID: 8311127192451957190}
+  - component: {fileID: 2330475329432889904}
   m_Layer: 0
   m_Name: FrontWall
   m_TagString: Untagged
@@ -716,6 +732,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2330475329432889904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826611987062695534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fe04817aeef17746b4f12c1904677f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _characterController: {fileID: 8311127192451957190}
+  m_hitEffect: 1
 --- !u!1 &1450283200330379402
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,6 +758,7 @@ GameObject:
   - component: {fileID: 1616518766211176935}
   - component: {fileID: 2860022333808509942}
   - component: {fileID: 3957620343029262240}
+  - component: {fileID: 2057208210773217492}
   m_Layer: 0
   m_Name: LeftWallAdditional
   m_TagString: Untagged
@@ -821,6 +852,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2057208210773217492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450283200330379402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fe04817aeef17746b4f12c1904677f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _characterController: {fileID: 3957620343029262240}
+  m_hitEffect: 1
 --- !u!1 &1702113258244681560
 GameObject:
   m_ObjectHideFlags: 0
@@ -867,6 +912,7 @@ GameObject:
   - component: {fileID: 1204021553330279840}
   - component: {fileID: 3703652317070221142}
   - component: {fileID: 7373918147503236419}
+  - component: {fileID: 3605273435995759953}
   m_Layer: 0
   m_Name: BackWall
   m_TagString: Untagged
@@ -960,6 +1006,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3605273435995759953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741981495956373360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fe04817aeef17746b4f12c1904677f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _characterController: {fileID: 7373918147503236419}
+  m_hitEffect: 1
 --- !u!1 &1872080729699853880
 GameObject:
   m_ObjectHideFlags: 0
@@ -2761,6 +2821,7 @@ GameObject:
   - component: {fileID: 6166330207858305292}
   - component: {fileID: 1779362628329795550}
   - component: {fileID: 4632467832848546367}
+  - component: {fileID: 1071438906686210021}
   m_Layer: 0
   m_Name: Prism
   m_TagString: Untagged
@@ -2958,7 +3019,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3813
+  m_VersionIndex: 3819
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -3063,6 +3124,20 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &1071438906686210021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7772900490049416158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fe04817aeef17746b4f12c1904677f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _characterController: {fileID: 4632467832848546367}
+  m_hitEffect: 1
 --- !u!1 &7780112709058179864
 GameObject:
   m_ObjectHideFlags: 0
@@ -3075,6 +3150,7 @@ GameObject:
   - component: {fileID: 7341632809665967475}
   - component: {fileID: 1631578082529439016}
   - component: {fileID: 5776238823466213440}
+  - component: {fileID: 4127522107862627271}
   m_Layer: 0
   m_Name: RightWall
   m_TagString: Untagged
@@ -3168,6 +3244,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4127522107862627271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7780112709058179864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fe04817aeef17746b4f12c1904677f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _characterController: {fileID: 5776238823466213440}
+  m_hitEffect: 1
 --- !u!1 &8252809939411370667
 GameObject:
   m_ObjectHideFlags: 0
@@ -3180,6 +3270,7 @@ GameObject:
   - component: {fileID: 5400000196639792318}
   - component: {fileID: 8518946855295960005}
   - component: {fileID: 6763054448617251289}
+  - component: {fileID: 7205324676929409164}
   m_Layer: 0
   m_Name: LeftWallMain
   m_TagString: Untagged
@@ -3273,3 +3364,17 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7205324676929409164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8252809939411370667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fe04817aeef17746b4f12c1904677f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _characterController: {fileID: 6763054448617251289}
+  m_hitEffect: 1

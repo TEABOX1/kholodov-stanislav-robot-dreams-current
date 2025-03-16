@@ -1,10 +1,9 @@
 #if UNITY_EDITOR
-using Lesson_14;
 using UnityEditor;
 #endif
 using UnityEngine;
 
-namespace Dummies
+namespace Lesson_14
 {
     public class BillBoardSystem : MonoBehaviour
     {

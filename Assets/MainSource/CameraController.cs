@@ -1,7 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.InputSystem.XInput;
-using UnityEngine.InputSystem.XR;
-using static UnityEditor.FilePathAttribute;
 
 namespace Assets.MainSource
 {

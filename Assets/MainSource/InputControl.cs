@@ -44,8 +44,8 @@ namespace Assets.MainSource
 
         private void OnEnable()
         {
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
+            //Cursor.visible = false;
+            //Cursor.lockState = CursorLockMode.Locked;
 
             m_inputActionAsset.Enable();
 
@@ -90,8 +90,8 @@ namespace Assets.MainSource
 
         private void OnDisable()
         {
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
+            //Cursor.visible = false;
+            //Cursor.lockState = CursorLockMode.Confined;
 
             m_actionMap.Disable();
             m_inputActionAsset.Disable();
@@ -199,6 +199,10 @@ namespace Assets.MainSource
         private void EscapePerformedHandler(InputAction.CallbackContext context)
         {
             OnEscapeInput?.Invoke();
+
+            bool isMenuEnabled = FindObjectOfType<MenuEscape>()?.Enabled ?? false;
+            Cursor.visible = isMenuEnabled;
+            Cursor.lockState = isMenuEnabled ? CursorLockMode.None : CursorLockMode.Locked;
         }
     }
 }
